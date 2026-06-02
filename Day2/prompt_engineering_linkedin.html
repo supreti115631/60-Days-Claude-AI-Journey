@@ -1,0 +1,147 @@
+
+<style>
+  .pe-root { font-family: var(--font-sans); padding: 1.5rem 0; max-width: 680px; }
+  .badge { display: inline-block; font-size: 11px; font-weight: 500; padding: 3px 10px; border-radius: 999px; letter-spacing: 0.04em; }
+  .badge-purple { background: #EEEDFE; color: #3C3489; }
+  .badge-teal { background: #E1F5EE; color: #085041; }
+  .section-title { font-size: 11px; font-weight: 500; letter-spacing: 0.08em; color: var(--color-text-tertiary); text-transform: uppercase; margin: 0 0 10px; }
+  .compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 20px; }
+  .cbox { background: var(--color-background-secondary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); padding: 14px 16px; }
+  .cbox-label { font-size: 12px; font-weight: 500; margin: 0 0 8px; }
+  .cbox-text { font-size: 13px; color: var(--color-text-secondary); line-height: 1.6; margin: 0; }
+  .cbox-bad { border-left: 3px solid #E24B4A; border-radius: 0 var(--border-radius-lg) var(--border-radius-lg) 0; }
+  .cbox-good { border-left: 3px solid #1D9E75; border-radius: 0 var(--border-radius-lg) var(--border-radius-lg) 0; }
+  .pill-row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+  .pill { font-size: 12px; padding: 5px 13px; border-radius: 999px; border: 0.5px solid var(--color-border-secondary); color: var(--color-text-secondary); display: flex; align-items: center; gap: 6px; cursor: pointer; transition: background .15s; }
+  .pill:hover { background: var(--color-background-secondary); }
+  .pill i { font-size: 14px; }
+  .tool-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .tool-card { background: var(--color-background-secondary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); padding: 12px 14px; }
+  .tool-name { font-size: 13px; font-weight: 500; margin: 0 0 4px; }
+  .tool-tip { font-size: 11px; color: var(--color-text-secondary); margin: 0; line-height: 1.5; }
+  .divider { border: none; border-top: 0.5px solid var(--color-border-tertiary); margin: 20px 0; }
+  .hero { background: linear-gradient(135deg, #EEEDFE 0%, #E1F5EE 100%); border-radius: var(--border-radius-lg); padding: 20px 24px; margin-bottom: 20px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+  .hero-title { font-size: 22px; font-weight: 500; color: #3C3489; margin: 0 0 4px; }
+  .hero-sub { font-size: 13px; color: #0F6E56; margin: 0; }
+  .hero-icon { font-size: 48px; color: #7F77DD; opacity: .8; flex-shrink: 0; }
+  .step-row { display: flex; gap: 10px; align-items: flex-start; margin-bottom: 12px; }
+  .step-num { width: 26px; height: 26px; border-radius: 50%; background: #EEEDFE; color: #3C3489; font-size: 12px; font-weight: 500; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .step-body { flex: 1; }
+  .step-head { font-size: 13px; font-weight: 500; margin: 0 0 2px; color: var(--color-text-primary); }
+  .step-desc { font-size: 12px; color: var(--color-text-secondary); margin: 0; line-height: 1.55; }
+  .footer-bar { background: #EEEDFE; border-radius: var(--border-radius-lg); padding: 12px 18px; display: flex; align-items: center; gap: 10px; margin-top: 20px; }
+  .footer-bar i { font-size: 20px; color: #534AB7; }
+  .footer-text { font-size: 12px; color: #3C3489; line-height: 1.5; }
+</style>
+<div class="pe-root">
+  <h2 class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)">Prompt Engineering: A Visual Guide</h2>
+
+  <!-- Hero -->
+  <div class="hero">
+    <div>
+      <p class="hero-title">Prompt Engineering</p>
+      <p class="hero-sub">The skill of talking to AI so it actually listens</p>
+    </div>
+    <i class="ti ti-prompt hero-icon" aria-hidden="true"></i>
+  </div>
+
+  <!-- What is it -->
+  <p class="section-title">What is it?</p>
+  <p style="font-size:14px;color:var(--color-text-secondary);line-height:1.7;margin:0 0 16px;">Prompt engineering is the practice of crafting your inputs to an AI model in a structured, intentional way — so you get precise, useful, and consistent outputs instead of vague or generic ones.</p>
+
+  <hr class="divider">
+
+  <!-- Comparison -->
+  <p class="section-title">Normal vs. Engineered prompt</p>
+  <div class="compare-grid">
+    <div class="cbox cbox-bad">
+      <p class="cbox-label" style="color:#A32D2D;"><i class="ti ti-x" aria-hidden="true" style="font-size:13px;margin-right:4px;"></i>Normal prompt</p>
+      <p class="cbox-text">"Write me a marketing email."</p>
+      <p class="cbox-text" style="margin-top:8px;font-size:11px;color:var(--color-text-tertiary);">Vague → generic AI filler</p>
+    </div>
+    <div class="cbox cbox-good">
+      <p class="cbox-label" style="color:#0F6E56;"><i class="ti ti-check" aria-hidden="true" style="font-size:13px;margin-right:4px;"></i>Engineered prompt</p>
+      <p class="cbox-text">"Write a 150-word email for a SaaS product targeting HR managers. Tone: friendly & direct. Include a CTA to book a demo."</p>
+      <p class="cbox-text" style="margin-top:8px;font-size:11px;color:var(--color-text-tertiary);">Specific → targeted result</p>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- 5 techniques -->
+  <p class="section-title">5 core techniques</p>
+  <div style="margin-bottom:16px;">
+    <div class="step-row">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <p class="step-head">Role assignment</p>
+        <p class="step-desc">"Act as a senior data scientist..." — giving a persona sharpens tone, depth, and vocabulary.</p>
+      </div>
+    </div>
+    <div class="step-row">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <p class="step-head">Context + constraints</p>
+        <p class="step-desc">State the audience, format, word count, and what to avoid. Constraints = fewer surprises.</p>
+      </div>
+    </div>
+    <div class="step-row">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        <p class="step-head">Chain-of-thought</p>
+        <p class="step-desc">"Think step by step before answering." Forces the model to reason before responding.</p>
+      </div>
+    </div>
+    <div class="step-row">
+      <div class="step-num">4</div>
+      <div class="step-body">
+        <p class="step-head">Few-shot examples</p>
+        <p class="step-desc">Show 2–3 example input/output pairs so the model mirrors your desired style exactly.</p>
+      </div>
+    </div>
+    <div class="step-row">
+      <div class="step-num">5</div>
+      <div class="step-body">
+        <p class="step-head">Output format specification</p>
+        <p class="step-desc">"Return as a JSON object with keys: title, summary, tags." Eliminates reformatting work.</p>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- Per-tool tips -->
+  <p class="section-title">Tips by AI tool</p>
+  <div class="tool-grid">
+    <div class="tool-card">
+      <p class="tool-name">Claude</p>
+      <p class="tool-tip">Use XML tags like &lt;task&gt; and &lt;context&gt;. Claude follows nested structure very well.</p>
+    </div>
+    <div class="tool-card">
+      <p class="tool-name">ChatGPT</p>
+      <p class="tool-tip">Leverage the system message for persistent persona & rules across the conversation.</p>
+    </div>
+    <div class="tool-card">
+      <p class="tool-name">Gemini</p>
+      <p class="tool-tip">Works well with multimodal context — pair your text prompt with images for richer outputs.</p>
+    </div>
+    <div class="tool-card">
+      <p class="tool-name">Copilot</p>
+      <p class="tool-tip">Reference specific files or code blocks directly. Context-grounding improves accuracy.</p>
+    </div>
+    <div class="tool-card">
+      <p class="tool-name">Midjourney</p>
+      <p class="tool-tip">Use style suffixes like "--style raw" and weight tokens like "sunset::2 city::1" for control.</p>
+    </div>
+    <div class="tool-card">
+      <p class="tool-name">All tools</p>
+      <p class="tool-tip">Iterate! Treat your first prompt as a draft — refine based on what the output reveals.</p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer-bar">
+    <i class="ti ti-bulb" aria-hidden="true"></i>
+    <p class="footer-text"><strong>Golden rule:</strong> The more precise your input, the more useful the output. Treat every prompt as a brief to a smart but context-free collaborator.</p>
+  </div>
+</div>
