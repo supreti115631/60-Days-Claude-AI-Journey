@@ -1,7 +1,7 @@
 ## Basics of Prompt Engineering
 
-" Prompts is not all about giving gudiding instructions to the Model , its about how effectively
-    and efficiently you engage and communicate with your AI"
+> *" Prompts is not all about giving gudiding instructions to the Model , its about how effectively
+    and efficiently you engage and communicate with your AI"*
                       
 
 **Prompt Engineering** - It's is the process/practice of Desgning and refining structured and clean instructions to guide your AI model
