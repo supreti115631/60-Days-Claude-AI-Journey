@@ -106,7 +106,17 @@ End with:
 
 Generated using Chain-of-Thought Reasoning
 
-**Output**:
+**Output**:  
+![COT Prompt Output](../images/COTPromptOutput.png)
+
+**Tool of the Day**:
+
+**Capsule Hub**:
+Capsule Hub by Tilantra is a context-transfer layer for modern AI work. It turns chats and email threads into portable Capsules—structured bundles of goals, constraints, background, and attachments—so you can move work between models and tools without rebuilding context from scratch.
+
+Most teams lose hours re-explaining the same situation to every new chat. Capsule Hub makes that knowledge capture-once, inject-anywhere: from research in Gemini to execution in ChatGPT, from a Gmail thread to requirements in GPT, from a capsule in Cursor (via MCP) back to review in Claude—with versioning along the way.
+
+
 
 
 
