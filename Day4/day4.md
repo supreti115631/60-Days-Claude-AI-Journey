@@ -116,6 +116,9 @@ Capsule Hub by Tilantra is a context-transfer layer for modern AI work. It turns
 
 Most teams lose hours re-explaining the same situation to every new chat. Capsule Hub makes that knowledge capture-once, inject-anywhere: from research in Gemini to execution in ChatGPT, from a Gmail thread to requirements in GPT, from a capsule in Cursor (via MCP) back to review in Claude—with versioning along the way.
 
+It allows for Cross Platform Intelligence without losing context in between allowing for wider integration between different AI tools.
+
+![Capsule Hub](../images/Capsulehub.png)
 
 
 
