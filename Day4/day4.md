@@ -6,11 +6,13 @@ Researchers were inspired by the LLMs’ ability to “think out loud” in natu
 
 ![Prompt chaining vs COT](https://assets.ibm.com/is/image/ibm/chain-of-thoughts-prompt?dpr=on%2C1.5&wid=960&hei=540 "Prompt chaining vs COT")
 
-**Key Advantages:**
-1.Better reasoning: Breaking problems into steps improves accuracy and depth.
-2.More reliable outputs: Claude evaluates assumptions before providing recommendations.
-3.Personalized solutions: Structured thinking creates highly customized outputs.
-4.Real-world applications: Career planning, business strategy, decision-making, and project planning become significantly better.
+**Key Advantages:**  
+1.**Better reasoning**: Breaking problems into steps improves accuracy and depth.  
+2.**More reliable outputs**: Claude evaluates assumptions before providing recommendations.  
+3.**Personalized solutions**: Structured thinking creates highly customized outputs.  
+4.**Real-world applications**: Career planning, business strategy, decision-making, and project planning become significantly better.
+
+
 
 
 
