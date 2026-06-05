@@ -32,4 +32,31 @@ Make it practical and beginner-friendly.
 Generate the Linked-In shareable AI cinematic portrait for the roadmap. Use Claude-inspired brown, beige and cream colors  
 
 **Output**  
+![withoutcontext](../images/generic_wo_context.png)  
+
+**Input Prompt B:**  
+
+Create a 30-day learning roadmap.
+
+Context:
+- Current Situation: Professional
+- Current Skills: Python Programing, SQL, Data Engineering
+- Goal: To be an AI Engineer
+- Available Time: 2 hours per day
+- Experience Level: Intermediate
+- Preferred Learning Style: Videos, Public Projects, Articles and Blogs
+
+Include:
+- Weekly milestones
+- Daily tasks
+- Resources
+- Projects
+- Final outcome
+
+Make it practical and beginner-friendly.
+
+Generate the Linked-In shareable AI cinematic portrait for the roadmap. Use Claude-inspired brown, beige and cream colors.  
+**Output**:  
+![withcontext](../images/generic_with_context.png)
+
 
