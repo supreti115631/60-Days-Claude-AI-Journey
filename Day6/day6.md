@@ -7,5 +7,6 @@ This basically involves using AI for converting traditional , non-actionable, co
 ![orignal_resume_1](../images/orignal_resume_2.png)  
 
 **AI-Optimized resume**:  
+![AIResume](../images/ai_optimized_resume.png)
 
 
