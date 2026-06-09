@@ -8,6 +8,11 @@ Claude offers different models optimized for different types of work. Understand
 **4.Reasoning Effort:** Low, Standard, High, and Max determine how much thinking Claude performs before answering.  
 
 **My Personlaized Claude Usage Stragey**:  
+![image](../images/claude_usage_strategy.png)  
+
+**Tool Of the Day: Claude Usage Counter**:  
+Claude Counter helps monitor Claude usage, message limits, and consumption directly inside Claude's web interface.    
+Download the extension from following github link: https://github.com/she-llac/claude-counter
 
 
 
