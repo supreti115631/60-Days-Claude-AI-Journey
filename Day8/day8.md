@@ -70,5 +70,6 @@ IMPORTANT
 Do not provide code snippets. Create a complete interactive Claude Artifact with working charts, filters, cards, insights, report cards, and dashboards that users can interact with directly.  
 
 **Output**:  
+![image](../images/artifact.png)
 
 
