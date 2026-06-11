@@ -9,4 +9,13 @@ One of the biggest mistakes beginners make is asking AI to build extremely large
 
 **Practical Use Case**:  
 
-**NutriScope** is a AI-powered Nutritional wellbeing App designed for users 
+**NutriScope** is an AI-powered Nutritional wellbeing App designed for users to keep track of their daily nutrients intake ,  target Fulfillment%, associated risks and provide necessary recomendations for closing the nutritional gaps and improve the overall wellbeing of a person.  
+
+**Key Features**:  
+
+**1.Simpler UI Design**: The Overall UI & its features are simple & easy to use and understand providing seamless user experience.  
+**2.Fast & Actinable Insights**: By Simply inputing user stats and daily food intake deatils you will get complete and actionable insights along with complementary features such as Meal Planner, Risk Assessment and advanced recommendations in regards to your nutrional health.  
+**3.Logical Workflows**: All the Modules/Sections are interrelated providing easy navigation, high interpretability and actionable insights.  
+**4.Metric Authenticity**: Data Sources for all teh health metrics shown in APP( eg: BMR, TDEE etc) are documented for building high level of trust and transparency.  
+
+
