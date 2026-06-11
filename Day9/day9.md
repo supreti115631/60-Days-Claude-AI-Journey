@@ -14,7 +14,7 @@ One of the biggest mistakes beginners make is asking AI to build extremely large
 **Key Features**:  
 
 **1.Simpler UI Design**: The Overall UI & its features are simple & easy to use and understand providing seamless user experience.  
-**2.Fast & Actinable Insights**: By Simply inputing user stats and daily food intake deatils you will get complete and actionable insights along with complementary features such as Meal Planner, Risk Assessment and advanced recommendations in regards to your nutrional health.  
+**2.Fast & Actionable Insights**: By Simply inputing user stats and daily food intake deatils you will get complete and actionable insights along with complementary features such as Meal Planner, Risk Assessment and advanced recommendations in regards to your nutrional health.  
 **3.Logical Workflows**: All the Modules/Sections are interrelated providing easy navigation, high interpretability and actionable insights.  
 **4.Metric Authenticity**: Data Sources for all teh health metrics shown in APP( eg: BMR, TDEE etc) are documented for building high level of trust and transparency.  
 
