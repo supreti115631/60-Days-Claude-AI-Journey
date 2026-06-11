@@ -18,6 +18,13 @@ One of the biggest mistakes beginners make is asking AI to build extremely large
 **3.Logical Workflows**: All the Modules/Sections are interrelated providing easy navigation, high interpretability and actionable insights.  
 **4.Metric Authenticity**: Data Sources for all teh health metrics shown in APP( eg: BMR, TDEE etc) are documented for building high level of trust and transparency.  
 
-🎥 [Watch Demo]()
+**DEMO- First MVP**:  
+
+🎥 [Watch Demo](https://github.com/supreti115631/60-Days-Claude-AI-Journey/blob/main/videos/Microsoft_%20Edge%20-%20NutriScope%20%E2%80%94%20Precision%20Nutrition%20Tracking%20and%2018%20more%20pages%20-%20Personal%20-%20Microsoft_%20Edge%20-%2011%20June%202026.mp4)  
+
+**DEMO- Final Production-Grade APP**:  
+
+
+
 
 
