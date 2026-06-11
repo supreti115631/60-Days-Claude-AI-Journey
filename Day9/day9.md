@@ -18,4 +18,6 @@ One of the biggest mistakes beginners make is asking AI to build extremely large
 **3.Logical Workflows**: All the Modules/Sections are interrelated providing easy navigation, high interpretability and actionable insights.  
 **4.Metric Authenticity**: Data Sources for all teh health metrics shown in APP( eg: BMR, TDEE etc) are documented for building high level of trust and transparency.  
 
+🎥 [Watch Demo]()
+
 
