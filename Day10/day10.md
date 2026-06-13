@@ -66,5 +66,8 @@ Return only the complete HTML code.
 
 **Ouput Portfolio Banner**:  
 
-![images](../images/sandeep-upreti-linkedin.png)
+![images](../images/sandeep-upreti-linkedin.png)  
+
+**Portfolio Website link**:  
+https://sandeepupretiportfolio.netlify.app/
 
