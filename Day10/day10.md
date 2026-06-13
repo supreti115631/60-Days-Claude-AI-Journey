@@ -62,5 +62,9 @@ Optional:
 - If a profile photo is uploaded, use it in the portfolio.
 - Generate recruiter-friendly content and project descriptions from resume data.
 
-Return only the complete HTML code.
+Return only the complete HTML code.  
+
+**Ouput Portfolio Banner**:  
+
+![images](../images/sandeep-upreti-linkedin.png)
 
