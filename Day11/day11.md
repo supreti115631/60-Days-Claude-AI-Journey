@@ -64,3 +64,5 @@ The resume should be fully formatted, ready to copy into Word, Google Docs, Flow
 
 **Optimized Resume**:  
 
+[View the PDF](../images/Sandeep_Upreti_AI_Engineer_Resume.pdf)
+
