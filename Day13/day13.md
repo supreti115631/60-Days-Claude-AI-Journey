@@ -9,6 +9,9 @@ Claude Connectors allow Claude to access external information sources and use th
 **3.Market Analysis:** Identify in-demand skills and hiring trends.  
 **4.Career Planning:** Build a smarter job search strategy.  
 
+References:  
+https://claude.ai/directory/connectors/indeed  
+
 **Practical Demonstration**:  
 
 **Input Prompt**:  
