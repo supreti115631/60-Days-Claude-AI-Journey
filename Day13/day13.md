@@ -63,5 +63,8 @@ Most commonly required skills across the jobs
 Skill gap analysis
 Market demand insights
 Recommendations to improve my chances of getting interviews
-Overall fit assessment for my target roles and compensation goals.
+Overall fit assessment for my target roles and compensation goals.  
+
+**Output**:  
+![images](../images/Job_Search_Infographic.png)
 
