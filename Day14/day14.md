@@ -73,5 +73,8 @@ Job Description:
 [Paste Here]
 
 Company Information:
-[Paste Here]
+[Paste Here]  
+
+**Output**:  
+![imamge](../images/job_risk_diagnostics.png)
 
