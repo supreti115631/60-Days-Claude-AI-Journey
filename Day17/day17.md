@@ -47,3 +47,4 @@ Dark navy #0a0f1e, glassmorphism. Colours: E85=amber Petrol=blue Diesel=grey CNG
 Output: <!DOCTYPE html> only. All numbers from CSV. Responsive 375px–1440px.  
 
 **Output**:  
+![images](../images/E85_Paradox_Dashboard.png)
