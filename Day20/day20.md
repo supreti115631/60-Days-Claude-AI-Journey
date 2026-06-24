@@ -109,4 +109,8 @@ TECHNICAL REQUIREMENTS:
 - Handle camera permission denied gracefully
 - Do NOT leave placeholder comments
 
-Output the complete HTML file in one code block. Do not truncate or summarise any section.
+Output the complete HTML file in one code block. Do not truncate or summarise any section.  
+
+**Output**:  
+
+![img](../images/Football_Intelligence_Dossier.png)
