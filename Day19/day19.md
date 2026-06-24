@@ -74,4 +74,8 @@ Final Output — Football Intelligence Profile
 Generate a single profile containing: the World Cup 2026 prediction report, Football Awareness Score, fan classification, Messi and Ronaldo compatibility scores, personality archetype, recommended players/teams/rivalries, and a key insights summary. Keep all analysis referenced to workbook data, make explanations engaging and evidence-based, match the user's knowledge level, and prioritize clarity over jargon.
 Commit and push the changes.
 23
-Submit the GitHub commit URL.
+Submit the GitHub commit URL.  
+
+**Output**:  
+
+![images](../images/Football_Intelligence_Dossier.png)
