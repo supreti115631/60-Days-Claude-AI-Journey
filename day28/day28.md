@@ -1,5 +1,5 @@
 # Build a Hospital Admission Readiness Simulator  
->*Experience hospital admissions through an interactive healthcare workflow*
+>*Experience hospital admissions through an interactive healthcare workflow*  
 >*Healthcare Operations with Claude*
 
 Hospital admissions require coordination between providers, insurance companies, utilization review teams, nursing staff, and administrative personnel. Claude can generate complete workflow simulations that teach healthcare operations through interactive decision-making.
