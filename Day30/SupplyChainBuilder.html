@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supply Chain Builder</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #e0e0e0;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: #0f3460;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 10px;
+            color: #00d4ff;
+            font-size: 2.5em;
+            text-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+        }
+        .subtitle {
+            text-align: center;
+            color: #a0a0a0;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+        .welcome-screen {
+            text-align: center;
+            padding: 40px;
+        }
+        .welcome-screen h2 {
+            color: #00d4ff;
+            margin: 20px 0;
+            font-size: 2em;
+        }
+        .welcome-screen p {
+            font-size: 1.1em;
+            margin: 15px 0;
+            line-height: 1.6;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .btn {
+            background: linear-gradient(135deg, #00d4ff, #0099cc);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 1em;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 10px;
+            font-weight: 600;
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 212, 255, 0.3);
+        }
+        .btn:active {
+            transform: translateY(0);
+        }
+        .company-profile {
+            background: linear-gradient(135deg, #1a4d6d, #0f3460);
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 4px solid #00d4ff;
+        }
+        .company-profile h3 {
+            color: #00d4ff;
+            margin-bottom: 15px;
+        }
+        .company-detail {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 15px 0;
+        }
+        .detail-item {
+            background: rgba(0, 212, 255, 0.1);
+            padding: 12px;
+            border-radius: 6px;
+            border: 1px solid rgba(0, 212, 255, 0.3);
+        }
+        .detail-label {
+            color: #a0a0a0;
+            font-size: 0.9em;
+        }
+        .detail-value {
+            color: #00d4ff;
+            font-weight: 600;
+            font-size: 1.1em;
+        }
+        .decision-screen {
+            margin: 30px 0;
+        }
+        .decision-screen h2 {
+            color: #00d4ff;
+            margin: 20px 0;
+            font-size: 1.8em;
+        }
+        .concept-explanation {
+            background: rgba(0, 212, 255, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #00d4ff;
+        }
+        .concept-explanation h4 {
+            color: #00d4ff;
+            margin-bottom: 10px;
+        }
+        .concept-explanation p {
+            line-height: 1.6;
+            margin: 8px 0;
+        }
+        .tradeoffs {
+            background: rgba(255, 100, 100, 0.1);
+            padding: 15px;
+            border-radius: 6px;
+            margin: 15px 0;
+            border-left: 4px solid #ff6464;
+            font-size: 0.95em;
+        }
+        .tradeoffs strong {
+            color: #ff9999;
+        }
+        .options-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 12px;
+            margin: 20px 0;
+        }
+        .option-btn {
+            background: linear-gradient(135deg, #1a4d6d, #0f3460);
+            color: #00d4ff;
+            border: 2px solid #00d4ff;
+            padding: 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            text-align: center;
+            min-height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .option-btn:hover {
+            background: linear-gradient(135deg, #00d4ff, #0099cc);
+            color: white;
+            border-color: #00d4ff;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 212, 255, 0.3);
+        }
+        .option-btn.selected {
+            background: linear-gradient(135deg, #00d4ff, #0099cc);
+            color: white;
+            border-color: #00d4ff;
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+        }
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin: 25px 0;
+        }
+        .metric-card {
+            background: linear-gradient(135deg, #1a4d6d, #0f3460);
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            text-align: center;
+        }
+        .metric-label {
+            color: #a0a0a0;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+        .metric-value {
+            color: #00d4ff;
+            font-size: 2em;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        .progress-bar {
+            background: rgba(0, 212, 255, 0.1);
+            height: 8px;
+            border-radius: 4px;
+            overflow: hidden;
+            border: 1px solid rgba(0, 212, 255, 0.3);
+        }
+        .progress-fill {
+            background: linear-gradient(90deg, #00d4ff, #0099cc);
+            height: 100%;
+            transition: width 0.3s ease;
+        }
+        .dashboard {
+            background: linear-gradient(135deg, #1a4d6d, #0f3460);
+            padding: 30px;
+            border-radius: 12px;
+            margin: 30px 0;
+            border: 2px solid #00d4ff;
+        }
+        .dashboard h2 {
+            color: #00d4ff;
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 2em;
+        }
+        .score-display {
+            text-align: center;
+            margin: 30px 0;
+        }
+        .score-value {
+            font-size: 4em;
+            color: #00d4ff;
+            font-weight: 600;
+            text-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+        }
+        .score-label {
+            color: #a0a0a0;
+            font-size: 1.1em;
+            margin-top: 10px;
+        }
+        .dashboard-section {
+            margin: 20px 0;
+            padding: 15px;
+            background: rgba(0, 212, 255, 0.05);
+            border-left: 4px solid #00d4ff;
+            border-radius: 6px;
+        }
+        .dashboard-section h4 {
+            color: #00d4ff;
+            margin-bottom: 10px;
+        }
+        .dashboard-section p {
+            color: #c0c0c0;
+            line-height: 1.6;
+            margin: 5px 0;
+        }
+        .replay-btn {
+            background: linear-gradient(135deg, #00d4ff, #0099cc);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.1em;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: block;
+            margin: 30px auto;
+            font-weight: 600;
+        }
+        .replay-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 212, 255, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+    
+    <script type="text/babel">
+        const { useState, useEffect } = React;
+
+        function SupplyChainBuilder() {
+            const [screen, setScreen] = useState('welcome');
+            const [company, setCompany] = useState(null);
+            const [metrics, setMetrics] = useState({
+                cost: 50,
+                speed: 50,
+                risk: 50,
+                satisfaction: 50,
+                sustainability: 50
+            });
+            const [decisions, setDecisions] = useState({
+                suppliers: null,
+                factory: null,
+                warehouse: null,
+                transportation: null,
+                inventory: null
+            });
+            const [currentDecision, setCurrentDecision] = useState(0);
+
+            const generateCompany = () => {
+                const industries = ['Electronics', 'Clothing', 'Food & Beverage', 'Pharmaceuticals', 'Automotive'];
+                const products = ['Smartphones', 'T-shirts', 'Coffee', 'Medicines', 'Car Parts'];
+                const countries = ['USA', 'Europe', 'Asia', 'Americas', 'Global'];
+                const demands = ['Low', 'Medium', 'High', 'Very High'];
+
+                return {
+                    name: `Company ${Math.floor(Math.random() * 1000)}`,
+                    industry: industries[Math.floor(Math.random() * industries.length)],
+                    product: products[Math.floor(Math.random() * products.length)],
+                    countries: countries[Math.floor(Math.random() * countries.length)],
+                    demand: demands[Math.floor(Math.random() * demands.length)]
+                };
+            };
+
+            const startSimulation = () => {
+                setCompany(generateCompany());
+                setMetrics({ cost: 50, speed: 50, risk: 50, satisfaction: 50, sustainability: 50 });
+                setDecisions({ suppliers: null, factory: null, warehouse: null, transportation: null, inventory: null });
+                setCurrentDecision(0);
+                setScreen('profile');
+            };
+
+            const updateMetrics = (option, category) => {
+                const impacts = {
+                    suppliers: {
+                        'Single': { cost: -20, speed: -15, risk: 20, satisfaction: 5 },
+                        'Multiple': { cost: 10, speed: 20, risk: -15, satisfaction: 20 }
+                    },
+                    factory: {
+                        'Local': { cost: 10, speed: 25, risk: -20, satisfaction: 15 },
+                        'Offshore': { cost: -20, speed: -15, risk: 15, satisfaction: -5 }
+                    },
+                    warehouse: {
+                        'Centralized': { cost: -15, speed: -10, risk: 10, satisfaction: 0 },
+                        'Distributed': { cost: 15, speed: 20, risk: -10, satisfaction: 20 }
+                    },
+                    transportation: {
+                        'Road': { cost: 5, speed: 20, risk: 5, sustainability: -10 },
+                        'Rail': { cost: -10, speed: -5, risk: 2, sustainability: 20 },
+                        'Sea': { cost: -15, speed: -20, risk: 0, sustainability: 15 },
+                        'Air': { cost: 20, speed: 25, risk: 5, sustainability: -25 }
+                    },
+                    inventory: {
+                        'Low': { cost: -20, speed: -10, risk: 15, satisfaction: -5 },
+                        'Balanced': { cost: 0, speed: 5, risk: 0, satisfaction: 10 },
+                        'High': { cost: 15, speed: 20, risk: -15, satisfaction: 20 }
+                    }
+                };
+
+                const impact = impacts[category][option];
+                const newMetrics = { ...metrics };
+                Object.keys(impact).forEach(key => {
+                    newMetrics[key] = Math.max(0, Math.min(100, newMetrics[key] + impact[key]));
+                });
+                setMetrics(newMetrics);
+            };
+
+            const handleDecision = (option, category) => {
+                const newDecisions = { ...decisions, [category]: option };
+                setDecisions(newDecisions);
+                updateMetrics(option, category);
+
+                const decisionOrder = ['suppliers', 'factory', 'warehouse', 'transportation', 'inventory'];
+                const nextIndex = decisionOrder.indexOf(category) + 1;
+
+                if (nextIndex < decisionOrder.length) {
+                    setCurrentDecision(nextIndex);
+                } else {
+                    setScreen('dashboard');
+                }
+            };
+
+            const calculateScore = () => {
+                const avg = Object.values(metrics).reduce((a, b) => a + b) / 5;
+                return Math.round(avg);
+            };
+
+            const renderDecisionScreen = () => {
+                const decisionConfigs = {
+                    suppliers: {
+                        title: 'Choose Your Supplier Strategy',
+                        explanation: 'Suppliers are companies that provide raw materials. Single suppliers are cheaper but riskier. Multiple suppliers are more reliable but cost more.',
+                        tradeoff: 'Single = lower costs but high supply risk. Multiple = higher reliability but increased complexity.',
+                        options: ['Single', 'Multiple']
+                    },
+                    factory: {
+                        title: 'Select Factory Location',
+                        explanation: 'Factory location affects costs, speed, and labor quality. Local manufacturing is fast but expensive. Offshore is cheap but slower.',
+                        tradeoff: 'Local = speed & quality but higher costs. Offshore = cost savings but longer lead times.',
+                        options: ['Local', 'Offshore']
+                    },
+                    warehouse: {
+                        title: 'Choose Warehouse Strategy',
+                        explanation: 'Warehouses store finished products. Centralized saves money but serves customers slowly. Distributed serves customers faster but costs more.',
+                        tradeoff: 'Centralized = efficiency & lower costs. Distributed = better customer service.',
+                        options: ['Centralized', 'Distributed']
+                    },
+                    transportation: {
+                        title: 'Select Transportation Method',
+                        explanation: 'Transportation moves products to customers. Road is flexible, Rail is efficient, Sea is cheap, Air is fast but expensive.',
+                        tradeoff: 'Road=flexible, Rail=sustainable, Sea=cheap, Air=fast but expensive.',
+                        options: ['Road', 'Rail', 'Sea', 'Air']
+                    },
+                    inventory: {
+                        title: 'Choose Inventory Strategy',
+                        explanation: 'Inventory is stock held. Low inventory saves costs but risks stockouts. High inventory serves customers better but ties up money.',
+                        tradeoff: 'Low = lower costs but supply risk. Balanced = optimal. High = customer satisfaction but capital waste.',
+                        options: ['Low', 'Balanced', 'High']
+                    }
+                };
+
+                const decisionOrder = ['suppliers', 'factory', 'warehouse', 'transportation', 'inventory'];
+                const currentCategory = decisionOrder[currentDecision];
+                const config = decisionConfigs[currentCategory];
+                const selected = decisions[currentCategory];
+
+                return (
+                    <div className="decision-screen">
+                        <h2>{config.title}</h2>
+                        <div className="concept-explanation">
+                            <h4>What is this?</h4>
+                            <p>{config.explanation}</p>
+                        </div>
+                        <div className="tradeoffs">
+                            <strong>Trade-offs:</strong> {config.tradeoff}
+                        </div>
+                        <h3>Choose an option:</h3>
+                        <div className="options-grid">
+                            {config.options.map(option => (
+                                <button
+                                    key={option}
+                                    className={`option-btn ${selected === option ? 'selected' : ''}`}
+                                    onClick={() => handleDecision(option, currentCategory)}
+                                >
+                                    {option}
+                                </button>
+                            ))}
+                        </div>
+                    </div>
+                );
+            };
+
+            const renderMetrics = () => (
+                <div className="metrics">
+                    {[
+                        { label: 'Cost', key: 'cost' },
+                        { label: 'Delivery Speed', key: 'speed' },
+                        { label: 'Risk', key: 'risk' },
+                        { label: 'Satisfaction', key: 'satisfaction' },
+                        { label: 'Sustainability', key: 'sustainability' }
+                    ].map(m => (
+                        <div key={m.key} className="metric-card">
+                            <div className="metric-label">{m.label}</div>
+                            <div className="metric-value">{metrics[m.key]}</div>
+                            <div className="progress-bar">
+                                <div
+                                    className="progress-fill"
+                                    style={{ width: `${metrics[m.key]}%` }}
+                                ></div>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            );
+
+            const renderDashboard = () => {
+                const score = calculateScore();
+                const strengths = Object.entries(metrics)
+                    .filter(([_, v]) => v >= 70)
+                    .map(([k]) => k);
+                const weaknesses = Object.entries(metrics)
+                    .filter(([_, v]) => v <= 30)
+                    .map(([k]) => k);
+                const biggestRisk = Object.entries(metrics)
+                    .sort((a, b) => a[1] - b[1])[0][0];
+
+                return (
+                    <div className="dashboard">
+                        <h2>Final Supply Chain Dashboard</h2>
+                        <div className="score-display">
+                            <div className="score-value">{score}</div>
+                            <div className="score-label">Overall Supply Chain Score</div>
+                        </div>
+                        {renderMetrics()}
+                        <div className="dashboard-section">
+                            <h4>Your Decisions</h4>
+                            <p><strong>Suppliers:</strong> {decisions.suppliers || 'Not selected'}</p>
+                            <p><strong>Factory:</strong> {decisions.factory || 'Not selected'}</p>
+                            <p><strong>Warehouse:</strong> {decisions.warehouse || 'Not selected'}</p>
+                            <p><strong>Transportation:</strong> {decisions.transportation || 'Not selected'}</p>
+                            <p><strong>Inventory:</strong> {decisions.inventory || 'Not selected'}</p>
+                        </div>
+                        <div className="dashboard-section">
+                            <h4>Strengths</h4>
+                            <p>{strengths.length > 0 ? strengths.join(', ') : 'Develop stronger areas'}</p>
+                        </div>
+                        <div className="dashboard-section">
+                            <h4>Weaknesses</h4>
+                            <p>{weaknesses.length > 0 ? weaknesses.join(', ') : 'Strong across all areas'}</p>
+                        </div>
+                        <div className="dashboard-section">
+                            <h4>Biggest Risk</h4>
+                            <p>{biggestRisk.charAt(0).toUpperCase() + biggestRisk.slice(1)} is your highest risk factor.</p>
+                        </div>
+                        <div className="dashboard-section">
+                            <h4>Top 3 Improvements</h4>
+                            <p>1. Focus on {weaknesses[0] || 'optimization'}</p>
+                            <p>2. Strengthen supplier relationships</p>
+                            <p>3. Invest in technology and automation</p>
+                        </div>
+                        <button className="replay-btn" onClick={startSimulation}>
+                            Replay with New Company
+                        </button>
+                    </div>
+                );
+            };
+
+            if (screen === 'welcome') {
+                return (
+                    <div className="container">
+                        <h1>Supply Chain Builder</h1>
+                        <div className="subtitle">Optimize a Supply Chain Like a Real Operations Leader</div>
+                        <div className="welcome-screen">
+                            <h2>Welcome to Supply Chain Optimization!</h2>
+                            <p>In this simulation, you'll become a supply chain manager tasked with optimizing operations for a real company.</p>
+                            <p>You'll make strategic decisions about suppliers, factories, warehouses, transportation, and inventory—each choice affects your business metrics.</p>
+                            <p>Learn how supply chains work and the real trade-offs that companies face every day.</p>
+                            <button className="btn" onClick={startSimulation}>Start Simulation</button>
+                        </div>
+                    </div>
+                );
+            }
+
+            if (screen === 'profile' && company) {
+                return (
+                    <div className="container">
+                        <h1>Supply Chain Builder</h1>
+                        <div className="subtitle">Company Profile</div>
+                        <div className="company-profile">
+                            <h3>Your Company</h3>
+                            <div className="company-detail">
+                                <div className="detail-item">
+                                    <div className="detail-label">Company Name</div>
+                                    <div className="detail-value">{company.name}</div>
+                                </div>
+                                <div className="detail-item">
+                                    <div className="detail-label">Industry</div>
+                                    <div className="detail-value">{company.industry}</div>
+                                </div>
+                                <div className="detail-item">
+                                    <div className="detail-label">Main Product</div>
+                                    <div className="detail-value">{company.product}</div>
+                                </div>
+                                <div className="detail-item">
+                                    <div className="detail-label">Markets</div>
+                                    <div className="detail-value">{company.countries}</div>
+                                </div>
+                                <div className="detail-item">
+                                    <div className="detail-label">Demand Level</div>
+                                    <div className="detail-value">{company.demand}</div>
+                                </div>
+                            </div>
+                            <p style={{ marginTop: '15px', color: '#a0a0a0' }}>
+                                This company operates in {company.countries} with {company.demand.toLowerCase()} demand. Your job is to build an efficient supply chain that balances cost, speed, quality, customer satisfaction, and sustainability.
+                            </p>
+                        </div>
+                        <button className="btn" onClick={() => setScreen('decision')}>Build Supply Chain</button>
+                    </div>
+                );
+            }
+
+            if (screen === 'decision' && company) {
+                return (
+                    <div className="container">
+                        <h1>Supply Chain Builder</h1>
+                        <div className="subtitle">{company.name} - Build Your Supply Chain</div>
+                        {renderDecisionScreen()}
+                        {renderMetrics()}
+                    </div>
+                );
+            }
+
+            if (screen === 'dashboard' && company) {
+                return (
+                    <div className="container">
+                        <h1>Supply Chain Builder</h1>
+                        <div className="subtitle">{company.name} - Optimization Results</div>
+                        {renderDashboard()}
+                    </div>
+                );
+            }
+
+            return null;
+        }
+
+        ReactDOM.createRoot(document.getElementById('root')).render(<SupplyChainBuilder />);
+    </script>
+</body>
+</html>
