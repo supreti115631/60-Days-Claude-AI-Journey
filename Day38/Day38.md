@@ -1,5 +1,5 @@
 # Build Typing Speed Studio  
->*Create a Premium Commercial Typing Platform*
+>*Create a Premium Commercial Typing Platform*  
 >*Interactive Productivity Applications*
 
 Today you'll learn how Claude can generate polished productivity applications by building a premium typing practice platform with adaptive learning, analytics, gamification, and commercial-quality UI/UX.
